@@ -319,7 +319,8 @@ namespace SocketIOClient
 		/// <param name="msg"></param>
 		protected void OnMessageEvent(IMessage msg)
 		{
-			
+			if (msg == null)
+				return;
 
 			bool skip = false;
 			if (!string.IsNullOrEmpty(msg.Event))
