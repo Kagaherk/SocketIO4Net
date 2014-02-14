@@ -323,7 +323,7 @@ namespace SocketIOClient
 				return;
 
 			bool skip = false;
-			if (!string.IsNullOrEmpty(msg.Event))
+			if (!string.IsNullOrEmpty(msg.Event) && registrationManager != null)
 				skip = this.registrationManager.InvokeOnEvent(msg); // 
 
 			var handler = this.Message;
